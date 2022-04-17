@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Header from "./Header";
 import Search from "./Search";
+import Footer from "./Footer";
 
 function App() {
+
 	const [data, setData] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -18,6 +21,7 @@ function App() {
 			.catch(setError);
 	}, []);
 
+	
 	if (loading) {
 		return <h1 style={{ textAlign: "center" }}>Loading...</h1>;
 	}
@@ -52,16 +56,24 @@ function App() {
 
 	return (
 		<div className="container">
+			<Header/>
 			<Search term={search} searchKeyword={searchHandler} />
-			{search.length < 1 ? (
+			<div>{search.length < 1 ? (
 				<ul className="list">
 					{x.map((item, i) => {
 						return (
 							<li key={i} className="list-item">
-								<i className="fa fa-book"></i>
+								<i className="fa-fa-book">
 								&nbsp;
-								{item.title}
+								{item.title}</i>								
+								<div>
+									<h3>Author: {item.author_name}</h3>
+									<h4>First Published Year: {item.first_publish_year}</h4>	
+									
+								</div>
+									
 							</li>
+							
 						);
 					})}
 				</ul>
@@ -70,14 +82,20 @@ function App() {
 					{searchResults.map((item, i) => {
 						return (
 							<li key={i} className="list-item">
-								<i className="fa fa-book"></i>
+								<i className="fa-fa-book">
 								&nbsp;
-								{item.title}
+								{item.title}</i>
+								<div>
+									<h3>Author: {item.author_name}</h3>
+									<h4>First Published Year: {item.first_publish_year}</h4>
+								</div>
 							</li>
 						);
 					})}
 				</ul>
 			)}
+			</div>
+			<Footer/>
 		</div>
 	);
 }

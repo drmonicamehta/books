@@ -1,5 +1,33 @@
 body {
 	font-family: "Poppins", sans-serif;
+	background-color: #E4FBFF;
+}
+header {
+	background-color: #0F044C;
+	margin: 10px 20px 20px 20px ;
+	padding: 16px 32px ;
+  }
+  
+header h1 {
+	color: #fff;
+	font-family: "McLaren", cursive;
+	font-weight: 200;
+	float: left;
+  }
+header img{
+	float:inline-start;
+
+}
+h2{
+	font-size : 12px;
+	font-weight: lighter;
+}
+footer {
+	text-align: center;
+} 
+
+.logo{
+	background-size: 10px;
 }
 .container {
 	width: 90%;
@@ -18,20 +46,24 @@ body {
 
 .list {
 	list-style: none;
-	font-size: 20px;
 	display: flex;
 	flex-wrap: wrap;
 	color: #fff;
 }
 
 .list-item {
-	background: #333;
+	background: rgb(31, 28, 28);
 	margin-right: 10px;
 	margin-bottom: 10px;
 	padding: 10px;
 	width: 45%;
 }
 
+.fa-fa-book{
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+}
 .center {
 	text-align: center;
 }

@@ -12,7 +12,9 @@ function Search({ term, searchKeyword }) {
 				value={term}
 				placeholder="Enter the book name"
 				onChange={handleSearch}
-			></input>
+			>
+				
+			</input>
 		</div>
 	);
 }
